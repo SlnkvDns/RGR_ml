@@ -12,7 +12,7 @@ contact_info_text = f"""
 Группа: {GROUP}
 """
 
-col1, col2 = st.columns(2)
+col1, col2 = st.columns(2, vertical_alignment="center")
 
 with col1:
     st.markdown(contact_info_text)
