@@ -2,9 +2,20 @@ import streamlit as st
 
 NAME = "Сальников Денис"
 GROUP = "ФИТ-231"
-VARIANT = "1"
+photo_path = "../data/photo.jpg"
 
-st.title("Информация о разработчкике")
-st.write("Имя разработчика: ", NAME)
-st.write("Группа: ", GROUP)
-st.write("Вариант датасета: ", VARIANT)
+contact_info_text = f"""
+### Разработка Web-приложения для инференса моделей ML и анализа данных
+
+Имя разработчика: {NAME}
+
+Группа: {GROUP}
+"""
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown(contact_info_text)
+
+with col2:
+    st.image(photo_path)
