@@ -1,5 +1,6 @@
 name: myenv
 channels:
+  - conda-forge
   - defaults
   - https://repo.anaconda.com/pkgs/main
   - https://repo.anaconda.com/pkgs/r
@@ -37,11 +38,12 @@ dependencies:
   - brotli-python=1.0.9=py39h5da7b33_9
   - bzip2=1.0.8=h2bbff1b_6
   - c-ares=1.19.1=h2bbff1b_0
-  - ca-certificates=2025.2.25=haa95532_0
+  - ca-certificates=2025.4.26=h4c7d964_0
   - cachetools=5.5.1=py39haa95532_0
   - cairo=1.16.0=hc68a040_5
   - catboost=1.2.3=py39haa95532_0
-  - certifi=2025.4.26=py39haa95532_0
+  - category_encoders=2.6.4=pyhd8ed1ab_1
+  - certifi=2025.4.26=pyhd8ed1ab_0
   - cffi=1.17.1=py39h827c3e9_1
   - charset-normalizer=3.3.2=pyhd3eb1b0_0
   - click=8.1.8=py39haa95532_0
@@ -172,7 +174,7 @@ dependencies:
   - numpy-base=1.26.4=py39h65a83cf_0
   - oauthlib=3.2.2=py39haa95532_0
   - openjpeg=2.5.2=h9b5d1b5_1
-  - openssl=1.1.1w=h2bbff1b_0
+  - openssl=1.1.1w=hcfcfb64_0
   - opt_einsum=3.3.0=pyhd3eb1b0_1
   - orc=1.7.4=h623e30f_1
   - overrides=7.4.0=py39haa95532_0
@@ -181,6 +183,7 @@ dependencies:
   - pandocfilters=1.5.0=pyhd3eb1b0_0
   - pango=1.50.7=h78c2152_0
   - parso=0.8.4=py39haa95532_0
+  - patsy=1.0.1=pyhd8ed1ab_1
   - pcre2=10.42=h0ff8eda_1
   - pickleshare=0.7.5=pyhd3eb1b0_1003
   - pillow=11.1.0=py39hea0d53e_1
@@ -218,6 +221,7 @@ dependencies:
   - python-graphviz=0.20.1=py39haa95532_1
   - python-json-logger=3.2.1=py39haa95532_0
   - python-tzdata=2025.2=pyhd3eb1b0_0
+  - python_abi=3.9=2_cp39
   - pytz=2024.1=py39haa95532_0
   - pywin32=308=py39h5da7b33_0
   - pywinpty=2.0.15=py39h72d21ff_0
@@ -245,6 +249,7 @@ dependencies:
   - soupsieve=2.5=py39haa95532_0
   - sqlite=3.45.3=h2bbff1b_0
   - stack_data=0.2.0=pyhd3eb1b0_0
+  - statsmodels=0.14.4=py39h4b0a98a_0
   - streamlit=1.45.0=py39haa95532_0
   - tbb=2021.8.0=h59b6b97_0
   - tenacity=9.0.0=py39haa95532_0
@@ -265,11 +270,13 @@ dependencies:
   - typing-extensions=4.12.2=py39haa95532_0
   - typing_extensions=4.12.2=py39haa95532_0
   - tzdata=2025b=h04d1e81_0
+  - ucrt=10.0.22621.0=h57928b3_1
   - unicodedata2=15.1.0=py39h827c3e9_1
   - urllib3=2.3.0=py39haa95532_0
   - utf8proc=2.6.1=h2bbff1b_1
   - vc=14.42=haa95532_5
-  - vs2015_runtime=14.42.34433=hbfb602d_5
+  - vc14_runtime=14.42.34438=hfd919c2_26
+  - vs2015_runtime=14.42.34438=h7142326_26
   - watchdog=4.0.2=py39haa95532_0
   - wcwidth=0.2.5=pyhd3eb1b0_0
   - webencodings=0.5.1=py39haa95532_1
