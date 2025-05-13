@@ -1,26 +1,33 @@
 import streamlit as st
 import pandas as pd
+import sys
+import os
+import numpy as np
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from models.models_loader import ModelsLoader
 
 st.markdown("# Предсказания")
 
-model_names = [
-        "Decision Tree",
-        "Random Forest",
-        "Stacking",
-        "Gradient Boosting",
-        "CatBoost"
-    ]
+models_loader = ModelsLoader()
+models = {
+    "Decision Tree": models_loader.load_dtc(),
+    "Random Forest": models_loader.load_rfc(),
+    "Gradient Boosting": models_loader.load_gbc(),
+    "Stacking": models_loader.load_stacking(),
+    "CatBoost": models_loader.load_cbc()
+}
 
-choice = st.selectbox(
+model = st.selectbox(
     label="Модель",
-    options= model_names,
+    options= models.keys(),
     index=None,
     placeholder="Выберите модель"
 )
 
 st.markdown("## Введите данные о рейсе для получения предсказания о задержке")
 
-df = pd.read_csv(r"../data/airlines_label_encoding.csv").dropna()
+df = pd.read_csv(r"data/airlines_label_encoding.csv").dropna()
 
 airline_codes = df["Airline"].unique()
 airline = st.selectbox(
@@ -93,3 +100,12 @@ length = st.number_input(
     step=1,
     placeholder="Введите длительность полёта в минутах"
 )
+
+if all(x is not None for x in [airline, flight, airport_from, airport_to, day, time, length]):
+    X = np.array([airline, flight, airport_from, airport_to, day, time, length])
+    predict = models[model].predict(X.reshape(1, -1))
+    
+    if predict == 0:
+        st.markdown(":green[Задержки нет]")
+    elif predict == 1:
+        st.markdown(":red[Задержка есть]")

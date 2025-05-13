@@ -2,7 +2,7 @@ import streamlit as st
 
 NAME = "Сальников Денис"
 GROUP = "ФИТ-231"
-photo_path = "../data/photo.jpg"
+photo_path = "data/photo.jpg"
 
 contact_info_text = f"""
 ### Разработка Web-приложения для инференса моделей ML и анализа данных

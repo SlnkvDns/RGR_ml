@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-original_dataset = pd.read_csv(r"../data/airlines_task.csv")
-processed_dataset = pd.read_csv(r"../data/airlines_label_encoding.csv").drop(columns=["Unnamed: 0"], axis=1)
+original_dataset = pd.read_csv(r"data/airlines_task.csv")
+processed_dataset = pd.read_csv(r"data/airlines_label_encoding.csv").drop(columns=["Unnamed: 0"], axis=1)
 
 dataset_info = """
 Прикладная область датасета: список авиарейсов
