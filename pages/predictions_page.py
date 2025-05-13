@@ -30,6 +30,7 @@ airline = st.selectbox(
     placeholder="Введите код авиакомпании"
 )
 
+
 flight = st.number_input(
     label="Номер рейса",
     min_value=1,
@@ -37,6 +38,7 @@ flight = st.number_input(
     step=1,
     placeholder="Введите номер рейса"
 )
+
 
 airport_from_codes = df["AirportFrom"].unique()
 airport_from = st.selectbox(
@@ -46,6 +48,7 @@ airport_from = st.selectbox(
     placeholder="Введите код аэропорта вылета"
 )
 
+
 airport_to_codes = df["AirportTo"].unique()
 airport_to = st.selectbox(
     label="Код аэропорта прибытия",
@@ -53,6 +56,7 @@ airport_to = st.selectbox(
     index=None,
     placeholder="Введите код аэропорта прибытия"
 )
+
 
 days = {
     "Понедельник": 1,
@@ -67,9 +71,10 @@ day_of_week = st.selectbox(
     label="День недели",
     options=days.keys(),
     index=None,
-    placeholder="Введите день недели полёта"
+    placeholder="Введите день недели полёта",
 )
-day = days[day_of_week]
+day = days.get(day_of_week)
+
 
 time = st.number_input(
     label="Время вылета",
@@ -80,6 +85,7 @@ time = st.number_input(
     placeholder="Введите время вылета в минутах с начала суток"
 )
 
+
 length = st.number_input(
     label="Длительность полёта",
     min_value=0,
@@ -87,5 +93,3 @@ length = st.number_input(
     step=1,
     placeholder="Введите длительность полёта в минутах"
 )
-
-
