@@ -1,6 +1,5 @@
 import pickle
 from catboost import CatBoostClassifier 
-from xgboost import XGBClassifier
 
 class ModelsLoader:
     def load_dtc(self, path = r"models/DecisionTreeCl.pkl"):

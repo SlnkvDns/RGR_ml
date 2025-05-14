@@ -22,7 +22,8 @@ model = st.selectbox(
     label="Модель",
     options= models.keys(),
     index=None,
-    placeholder="Выберите модель"
+    placeholder="Выберите модель",
+    key=1
 )
 
 st.markdown("## Введите данные о рейсе для получения предсказания о задержке")
@@ -109,3 +110,32 @@ if all(x is not None for x in [airline, flight, airport_from, airport_to, day, t
         st.markdown(":green[Задержки нет]")
     elif predict == 1:
         st.markdown(":red[Задержка есть]")
+
+st.markdown("## Загрузка данных из csv")
+
+model_for_csv = st.selectbox(
+    label="Модель",
+    options= models.keys(),
+    index=None,
+    placeholder="Выберите модель",
+    key=2
+)
+
+uploaded_file = st.file_uploader(
+    label="Загрузить csv файл",
+    type="csv",
+)
+
+if uploaded_file is not None:
+    input_df = pd.read_csv(uploaded_file, index_col=0)
+
+    if model_for_csv is not None:
+        pred = models[model_for_csv].predict(input_df.replace(days))
+        
+        output_df = input_df.copy()
+        output_df["Delay"] = pred
+        output_df["Delay"] = output_df["Delay"].replace({0: "Нет задержки", 1: "Есть задержка"})
+        output_df["Length"] = output_df["Length"].astype(int)
+        output_df = output_df.style.applymap(lambda x: 'color: red' if x == "Есть задержка" else "color: green" if x == "Нет задержки" else None)
+        
+        st.dataframe(output_df)
