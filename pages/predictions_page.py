@@ -15,7 +15,8 @@ models = {
     "Random Forest": models_loader.load_rfc(),
     "Gradient Boosting": models_loader.load_gbc(),
     "Stacking": models_loader.load_stacking(),
-    "CatBoost": models_loader.load_cbc()
+    "CatBoost": models_loader.load_cbc(),
+    "FCNN": models_loader.load_fcnn()
 }
 
 model = st.selectbox(

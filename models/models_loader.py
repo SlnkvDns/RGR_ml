@@ -26,3 +26,7 @@ class ModelsLoader:
     def load_stacking(self, path = r"models/StackingClassifier.pkl"):
         with open(path, "rb") as f:
             return pickle.load(f)
+
+    def load_fcnn(self, path = r"models/FCNN.pkl"):
+        with open(path, "rb") as f:
+            return pickle.load(f)
