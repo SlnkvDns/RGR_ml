@@ -3,8 +3,8 @@ import pandas as pd
 
 @st.cache_data
 def show_data():
-    original_dataset = pd.read_csv(r"data/airlines_task.csv")
-    processed_dataset = pd.read_csv(r"data/airlines_label_encoding.csv").drop(columns=["Unnamed: 0"], axis=1)
+    original_dataset = pd.read_csv(r"data/airlines_task.csv")[:1000]
+    processed_dataset = pd.read_csv(r"data/airlines_label_encoding.csv", index_col=0)[:1000]
 
     dataset_info = """
     Прикладная область датасета: список авиарейсов
