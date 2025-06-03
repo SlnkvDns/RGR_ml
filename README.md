@@ -4,4 +4,4 @@
 
 Выполнилнил студент группы ФИТ-231 Сальников Денис
 
-Ссылка на сайт: [text](https://salnikov-rgr-fit231.streamlit.app/)
+Ссылка на сайт: [https://salnikov-rgr-fit231.streamlit.app/](https://salnikov-rgr-fit231.streamlit.app/)
